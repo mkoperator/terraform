@@ -2,13 +2,11 @@
 ssh_key_path = "files/key.pem"
 nodes = [
   { 
-    external: "3.235.40.201",
-    internal: "172.31.81.105",
+    ip: "3.235.40.201",
     name: "node1"
   },
   {
-    external: "3.235.144.146",
-    internal: "172.31.81.176",
+    ip: "3.235.144.146",
     name: "node2"
   }
 ]
