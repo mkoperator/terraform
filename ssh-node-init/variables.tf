@@ -7,7 +7,7 @@ variable "ssh_user" {
 # Path to private key
 variable "ssh_key_path" {
   type = string
-  default = "private_key.pem"
+  default = "files/key.pem"
 }
 
 # SSH port
