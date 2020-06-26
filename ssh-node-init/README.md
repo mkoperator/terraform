@@ -1,3 +1,3 @@
-#  SSH MultiNode Config
+#  SSH Node Init
 Use this module to loop through an array of nodes and install the contents of `file/script.sh` on them. 
 
