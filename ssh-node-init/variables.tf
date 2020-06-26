@@ -22,6 +22,12 @@ variable "script_path" {
   default = "files/script.sh"
 }
 
+#we can pass our rke join command here
+variable "node_join_cluster" {
+  type = string
+  default = ""
+}
+
 # Nodes array
 variable "nodes" {
   type = list(object({

@@ -35,7 +35,8 @@ resource "null_resource" "nodes" {
 	provisioner "remote-exec" {
         inline      = [
             "chmod +x /tmp/script.sh",
-            "/tmp/script.sh args",   
+            "/tmp/script.sh args", 
+            var.node_join_cluster
         ]
     }
 }

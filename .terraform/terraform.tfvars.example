@@ -1,0 +1,12 @@
+// define our key path and nodes
+ssh_key_path = "files/key.pem"
+nodes = [
+  { 
+    ip: "3.235.40.201",
+    name: "node1"
+  },
+  {
+    ip: "3.235.144.146",
+    name: "node2"
+  }
+]
