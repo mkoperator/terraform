@@ -1,6 +1,10 @@
-// define our key path and nodes
-ssh_key_path = "files/key.pem"
-nodes = [
+// define our ssh info and nodes
+// this assumes an ubuntu user and default script and key path
+// ssh_user     = "ubuntu"
+// ssh_key_path = "files/key.pem"
+// script_path  = "files/script.sh"
+
+nodes           = [
   { 
     ip: "3.235.40.201",
     name: "node1"
