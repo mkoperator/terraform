@@ -1,0 +1,72 @@
+// define our ssh info and nodes
+// this assumes an ubuntu user and default script and key path
+ ssh_user     = "ubuntu"
+ ssh_key_path = "files/key.pem"
+ script_path  = "files/script.sh"
+
+controlplane-nodes     = [
+  { 
+    ip: "192.168.1.187",
+    name: "controlplane1",
+    onlyNode: false
+  }
+]
+worker-nodes           = [
+  { 
+    ip: "192.168.1.21",
+    name: "worker1"
+  },
+  {
+    ip: "192.168.1.12",
+    name: "worker2"
+  },
+  {
+    ip: "192.168.1.2",
+    name: "worker3"
+  }
+]
+
+// lifecycle stages: init = the node initialization script, The node destruction script.
+// valid dargets: controlplane, worker, all
+lifecycle-scripts      = [
+  { 
+    stage: "init",
+    target: "controlplane",
+    script_ath: "files/init_master_script.sh"
+
+  },
+  {
+    stage: "init",
+    target: "worker",
+    script_ath: "files/init_worker_script.sh"
+  },
+  {
+    stage: "destroy",
+    target: "all",
+    script_ath: "files/init_worker_script.sh"
+  }
+]
+
+// k3s global configs - passed to both controlplane and worker nodes
+global-configs      = [
+  { 
+    key: "k3s-name",
+    value: "k3s-cluster"
+  }
+]
+
+// k3s controlplane configs - passed only to server.
+controlplane-configs      = [
+  { 
+    key: "k3s-name",
+    value: "k3s-cluster"
+  }
+]
+
+// k3s worker configs - passed to server.
+worker-configs      = [
+  { 
+    key: "k3s-name",
+    value: "k3s-cluster"
+  }
+]

@@ -1,0 +1,5 @@
+files/*.pem
+terraform.tfvars
+terraform.tfstate
+terraform.tfstate.backup
+.terraform/
